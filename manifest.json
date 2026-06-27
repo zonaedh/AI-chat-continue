@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "AI Chat Continuator v2",
+  "version": "1.0.0",
+  "description": "Export any AI chat conversation and continue it seamlessly in a new session — works with ChatGPT, Claude, Gemini, and Z.ai.",
+  "permissions": ["storage", "activeTab", "scripting", "clipboardWrite"],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "*://z.ai/*",
+    "*://chat.z.ai/*",
+    "https://gemini.google.com/app*",
+    "https://*.firebaseio.com/*",
+    "https://firestore.googleapis.com/*",
+    "https://identitytoolkit.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/ui.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://claude.ai/*",
+        "*://z.ai/*",
+        "*://chat.z.ai/*",
+        "https://gemini.google.com/app*"
+      ],
+      "js": [
+        "utils/formatter.js",
+        "utils/clipboard.js",
+        "content-scripts/chat-detectors.js",
+        "content-scripts/extractor.js",
+        "content-scripts/injector.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ]
+}

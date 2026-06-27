@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Chat Continuator v2</title>
+  <link rel="stylesheet" href="ui.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">⤴</div>
+      <div>
+        <h1>AI Chat Continuator v2</h1>
+        <p class="subtitle">Continue any AI conversation, anywhere.</p>
+      </div>
+    </header>
+
+    <section class="card" id="status-card">
+      <div class="row">
+        <span class="label">Plan</span>
+        <span class="value" id="plan-value">—</span>
+      </div>
+      <div class="row">
+        <span class="label">Account</span>
+        <span class="value" id="account-value">—</span>
+      </div>
+      <div class="row" id="usage-row">
+        <span class="label">Exports today</span>
+        <span class="value" id="usage-value">—</span>
+      </div>
+    </section>
+
+    <section class="card" id="activate-card" hidden>
+      <h2>Activate</h2>
+      <input id="license-key" type="text" placeholder="License key" />
+      <button id="activate-btn" class="primary">Activate Pro</button>
+      <button id="free-btn" class="ghost">Continue with free plan</button>
+      <p class="error" id="activate-error" hidden></p>
+    </section>
+
+    <section class="card" id="account-card">
+      <h2>Sign in</h2>
+      <p class="hint">Sign in to sync your plan across devices.</p>
+      <input id="email" type="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password" />
+      <button id="signin-btn" class="primary">Sign in / Upgrade</button>
+      <p class="error" id="signin-error" hidden></p>
+    </section>
+
+    <div class="howto-trigger" id="howto-trigger" role="button" tabindex="0" aria-expanded="false">
+      <span>How to use</span>
+      <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+
+    <div class="howto-modal" id="howto-modal" hidden>
+      <div class="howto-card">
+        <div class="howto-head">
+          <h2>How to use</h2>
+          <button class="howto-close" id="howto-close" aria-label="Close">×</button>
+        </div>
+        <ol class="howto-steps">
+          <li>Open any AI chat site — ChatGPT, Claude, Gemini, or Z.ai.</li>
+          <li>Find the floating <b>Export / Continue Chat</b> button under the chat input box.</li>
+          <li>Click <b>Continue Chat</b> to copy the conversation as a ready-to-paste prompt.</li>
+          <li>Start a new chat anywhere and paste — your conversation continues seamlessly.</li>
+        </ol>
+      </div>
+    </div>
+
+    <footer>
+      <span class="made-by">Made by <a href="https://www.thesharkweb.com" target="_blank" rel="noopener">Zonaed</a> | <a href="https://www.thesharkweb.com" target="_blank" rel="noopener">www.thesharkweb.com</a></span>
+    </footer>
+  </div>
+  <script src="ui.js"></script>
+</body>
+</html>
