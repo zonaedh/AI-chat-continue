@@ -108,7 +108,7 @@ can't otherwise tell them apart.
 - Icons in `/icons` are simple placeholders generated for this build —
   swap in your own branding before shipping.
 
-
+ ---- Open Source ----
   MD ZONAED HOSSAIN
   www.zonaedhossain.com
   Founder | The Shark Web
